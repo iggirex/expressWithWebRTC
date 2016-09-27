@@ -1,6 +1,8 @@
 console.log("WE are in CLIENT")
 var socket = io();
 
+console.log("YO THIS IS ROOM!!!")
+
 var webrtc = new SimpleWebRTC({
     // the id/element dom element that will hold "our" video
     localVideoEl: 'localVideo',
@@ -10,8 +12,9 @@ var webrtc = new SimpleWebRTC({
     autoRequestMedia: true
 });
 
-webrtc.on('connection', function () {
+webrtc.on('connection', function (data) {
     // you can name it anything
+    console.log('HHHEEEYYYY numClients', data)
     webrtc.joinRoom('your awesome room name');
 });
 
