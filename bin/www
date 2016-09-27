@@ -7,7 +7,9 @@
 var app = require('../app');
 var debug = require('debug')('appWithMeselfeeWEBrtc:server');
 var http = require('http');
-let io = require('socket.io')();
+var io = require('../server.js');
+
+io.attach(server);
 
 /**
  * Get port from environment and store in Express.
