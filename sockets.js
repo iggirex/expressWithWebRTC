@@ -11,3 +11,5 @@ io.on('connection', function (socket)  {
     socket.broadcast.emit('go-private', data);
   });
 });
+
+module.exports = io;
